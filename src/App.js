@@ -1,12 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss'
+
 
 function App() {
-  return (
-    <div className="App">
-      <h1>Morvie platform</h1>
-    </div>
-  );
+    return (
+        <div>
+            App
+        </div>
+    );
 }
-
+  
 export default App;
