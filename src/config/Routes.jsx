@@ -3,12 +3,10 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import Home from '../pages/Home';
-import Catalog from '../pages/Catelog';
-import Detail from '../pages/Detail';
+import Catalog from '../pages/Catalog';
+import Detail from '../pages/detail/Detail';
 
-
-
-const NavRoutes = () => {
+const Routes = () => {
     return (
         <Switch>
             <Route
@@ -32,4 +30,4 @@ const NavRoutes = () => {
     );
 }
 
-export default NavRoutes;
+export default Routes;

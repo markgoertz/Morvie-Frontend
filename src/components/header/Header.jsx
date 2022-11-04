@@ -16,6 +16,10 @@ const headerNav = [
     {
         display:'TV series',
         path:'/tv'
+    },
+    {
+        display:'Login',
+        path:'/login'
     }
 ]
 
@@ -41,6 +45,9 @@ const Header = () => {
     return (
         <div ref={headerRef} className="header">
             <div className="header__wrap container">
+                <div className="logo">
+                    <Link to="/">Movies</Link>
+                </div>
                 <ul className="header__nav">
                     {
                         headerNav.map((e, i) => (

@@ -4,10 +4,10 @@ import './App.scss';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 import Header from './components/header/Header';
-import Login from './components/login/Login';
+import Login from './pages/Login';
 import Footer from './components/footer/Footer';
 
-import NavRoutes from './config/NavRoutes';
+import NavRoutes from './config/Routes';
 
 function App() {
     return (
@@ -15,7 +15,6 @@ function App() {
             <Route render={props => (
                 <>
                     <Header {...props}/>
-                    <Login/>
                     <NavRoutes/>
                     <Footer/>
                 </>
