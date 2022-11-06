@@ -36,8 +36,8 @@ const MovieGrid = props => {
                 }
                 response = await tmdbApi.search(props.category, {params});
             }
-            setItems(response.results);
-            setTotalPage(response.total_pages);
+            setItems(response.data.results);
+            setTotalPage(response.data.total_pages);
         }
         getList();
     }, [props.category, keyword]);
@@ -62,7 +62,7 @@ const MovieGrid = props => {
             }
             response = await tmdbApi.search(props.category, {params});
         }
-        setItems([...items, ...response.results]);
+        setItems([...items, ...response.data.results]);
         setPage(page + 1);
     }
 
