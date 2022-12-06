@@ -24,24 +24,8 @@ export const tvType = {
 
 const tmdbApi = {
     async getMoviesList(type, params) {
-        const url = baseurl + `movie/` + type +`?api_key=` + apikey;
-        return axios(url,
-            {
-                method: 'GET',
-                headers: {
-                    'content-type': 'application/json',
-                },
-                params: params
-            }) 
-        .catch(error => {
-          throw error;
-        })
-    },
 
-
-    getTvList(type, params) {
-        const url = baseurl + `tv/` + type +`?api_key=` + apikey;
-        return axios(url,
+        return axios(baseurl + type,
             {
                 method: 'GET',
                 headers: {
@@ -71,7 +55,7 @@ const tmdbApi = {
         return axiosClient.get(url, params);
     },
     detail(cate, id, params){
-        const url = baseurl + category[cate] + '/' + id + `?api_key=` + apikey;
+        const url = baseurl + category[cate] + '/'+ id ;
         return axios(url,
             {
                 method: 'GET',
@@ -85,7 +69,7 @@ const tmdbApi = {
         })
     },
     credits: (cate, id) => {
-        const url = baseurl + category[cate] + '/' + id + '/credits' + `?api_key=` + apikey;
+        const url = baseurl + "credits"+ "/" + category[cate] + '/' + id;
         return axios(url,
             {
                 method: 'GET',

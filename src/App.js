@@ -10,16 +10,17 @@ import Footer from './components/footer/Footer';
 import NavRoutes from './config/Routes';
 
 function App() {
-    return (
+    return (  
         <BrowserRouter>
             <Route render={props => (
                 <>
                     <Header {...props}/>
-                    <NavRoutes/>
+                    <NavRoutes/> 
                     <Footer/>
                 </>
             )}/>
         </BrowserRouter>
+
     );
 }
 
