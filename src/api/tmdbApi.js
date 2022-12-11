@@ -54,37 +54,63 @@ const tmdbApi = {
         const url = 'search/' + category[cate];
         return axiosClient.get(url, params);
     },
-    detail(cate, id, params){
+    async detail(cate, id, params){
         const url = baseurl + category[cate] + '/'+ id ;
-        return axios(url,
-            {
-                method: 'GET',
-                headers: {
-                    'content-type': 'application/json',
-                },
-                params: params
-            }) 
-        .catch(error => {
-          throw error;
-        })
+        try {
+            return await axios(url,
+                {
+                    method: 'GET',
+                    headers: {
+                        'content-type': 'application/json',
+                    },
+                    params: params
+                });
+        } catch (error) {
+            throw error;
+        }
     },
-    credits: (cate, id) => {
+    credits: async (cate, id) => {
         const url = baseurl + "credits"+ "/" + category[cate] + '/' + id;
-        return axios(url,
-            {
-                method: 'GET',
-                headers: {
-                    'content-type': 'application/json',
-                }
-            }) 
-        .catch(error => {
-          throw error;
-        })
+        try {
+            return await axios(url,
+                {
+                    method: 'GET',
+                    headers: {
+                        'content-type': 'application/json',
+                    }
+                });
+        } catch (error) {
+            throw error;
+        }
     },
-    similar: (cate, id) => {
-        const url = category[cate] + '/' + id + '/similar';
-        return axiosClient.get(url, {params: {}});
+    similar: async (cate, id) => {
+        const url = baseurl + category[cate] +'/similar' + "/"+ id;
+        try {
+            return await axios(url,
+                {
+                    method: 'GET',
+                    headers: {
+                        'content-type': 'application/json',
+                    }
+                });
+        } catch (error) {
+            throw error;
+        }
     },
+    getFeeds: async (id) => { 
+        const url = baseurl + '/movie' +'/similar' + "/"+ id;
+        try {
+            return await axios(url,
+                {
+                    method: 'GET',
+                    headers: {
+                        'content-type': 'application/json',
+                    }
+                });
+        } catch (error) {
+            throw error;
+        }
+    }
 }
 
 export default tmdbApi;

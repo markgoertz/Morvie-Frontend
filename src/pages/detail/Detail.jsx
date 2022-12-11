@@ -9,6 +9,7 @@ import CastList from './CastList';
 import VideoList from './VideoList';
 
 import MovieList from '../../components/movie-list/MovieList';
+import Feed from '../../components/feed/Feed';
 
 const Detail = () => {
 
@@ -61,9 +62,16 @@ const Detail = () => {
                             </div>
                             <div className="section mb-3">
                                 <div className="section__header mb-2">
-                                    <h2>Similar</h2>
+                                    <h2>Threads</h2>
                                 </div>
-                                <MovieList category={category} type="similar" id={item.id}/>
+                                <Feed/>
+                            </div>
+                            <div className="container">
+                                <div className="section mb-3">
+                                    <div className="section__header mb-2">
+                                        <h2>Similar</h2>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </>
