@@ -47,7 +47,10 @@ const Header = () => {
               src="https://avatars.githubusercontent.com/u/114815334?s=400&u=7838703f6c4f61c80e686d71f7f6d02f23539086&v=41"
             />
           </a>
+          
         </div>
+        <h3><Link align = "center" to = "/">Home</Link></h3>
+        <h3><Link align = "center" to = "/movie">Movie</Link></h3>
         <ul className="header__nav">{<Button>Log out</Button>}</ul>
       </div>
     </div>

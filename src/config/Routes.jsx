@@ -6,6 +6,8 @@ import Home from '../pages/Home';
 import Catalog from '../pages/Catalog';
 import Detail from '../pages/detail/Detail';
 import Login from '../pages/Login';
+import NotFoundPage from '../components/notfound/NotFound';
+import NotFound from '../components/notfound/NotFound';
 
 const Routes = () => {
     return (
@@ -32,7 +34,7 @@ const Routes = () => {
                 exact
                 component={Login}
             />
-
+            <Route path="" component={NotFound} />
         </Switch>
     );
 }

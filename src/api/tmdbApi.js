@@ -98,7 +98,7 @@ const tmdbApi = {
         }
     },
     getFeeds: async (id) => { 
-        const url = baseurl + '/movie' +'/similar' + "/"+ id;
+        const url = baseurl + 'feed/movie' + "/"+ id;
         try {
             return await axios(url,
                 {
