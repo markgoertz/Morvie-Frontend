@@ -14,7 +14,7 @@ const Catalog = () => {
     return (
         <>
             <PageHeader>
-                {category === cate.movie ? 'Movies' : 'Beep beep boop?'}
+                {category === cate.movie ? 'Movies' : 'Not found'}
             </PageHeader>
             <div className="container">
                 <div className="section mb-3">
