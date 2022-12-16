@@ -52,16 +52,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - run: CI=false
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
-      - name: Setup Node
-        uses: actions/setup-node@v1
-        with:
-          node-version: 14 # but you can do 12-16
+
       - name: Cypress run
         uses: cypress-io/github-action@v4 # use the explicit version number
         with:
-          build: CI=false npm run build
+          build: npm run build
           start: npm start
           browser: chrome
           
