@@ -63,8 +63,8 @@ jobs:
         uses: cypress-io/github-action@v4 # use the explicit version number
         with:
           run: npm run build
-            env:
-              CI: ""
+          env:
+            CI: ""
           start: npm start
           browser: chrome
 
