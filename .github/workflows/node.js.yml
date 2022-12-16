@@ -27,8 +27,7 @@ jobs:
         run: npm ci
       - name: Build the project
         run: npm run build
-        env:
-          CI: ""
+
 
   test:
     runs-on: ubuntu-latest
@@ -62,7 +61,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v4 # use the explicit version number
         with:
-          build: npm run build
+          build: CI=false npm run build
           start: npm start
           browser: chrome
           
