@@ -47,20 +47,25 @@ jobs:
       - name: Run test
         run: npm test
   
-  cypress-run:
-    runs-on: ubuntu-latest
+  end2end: 
+    runs-on: self-hosted
+    needs: [build]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
-      - name: Cypress run
-        uses: cypress-io/github-action@v2
+      - name: Setup Node
+        uses: actions/setup-node@v1
         with:
-          build: npm run build
+          node-version: 14 # but you can do 12-16
+      - name: Cypress run
+        uses: cypress-io/github-action@v4 # use the explicit version number
+        with:
+          run: npm run build
+            env:
+              CI: ""
           start: npm start
-          record: true
-        env:
-          # Recommended: pass the GitHub token lets this action correctly
-          # determine the unique run id necessary to re-run the checks
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          browser: chrome
+
+          
