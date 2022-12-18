@@ -1,19 +1,19 @@
 describe("Visit vercel app", () => {
   it("passes", () => {
-    cy.visit("https://morvie-frontend-markgoertz.vercel.app/");
+    cy.visit("http://localhost:3000/");
   });
 });
 
 describe("Keycloak-pages", () => {
   it("Access Keycloak registry page", () => {
-    cy.visit("https://morvie-frontend-markgoertz.vercel.app/");
+    cy.visit("http://localhost:3000/");
     cy.origin("http://localhost:2222/", () => {
       cy.get("a").contains("Register").click();
     });
   });
 
   it("Registry of a user should not be automated", () => {
-    cy.visit("https://morvie-frontend-markgoertz.vercel.app/");
+    cy.visit("http://localhost:3000/");
     cy.origin("http://localhost:2222/", () => {
       cy.get("a").contains("Register").click();
       cy.get("#firstName").type("Cypress");
