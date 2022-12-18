@@ -6,7 +6,8 @@ describe("Visit vercel app", () => {
 
 describe("Keycloak-pages", () => {
   it("Access Keycloak registry page", () => {
-    cy.visit("http://localhost:3000/");
+    cy.visit("http://localhost:3000")
+    cy.visit("http://localhost:2222/")
     cy.origin("http://localhost:2222/", () => {
       cy.get("a").contains("Register").click();
     });
