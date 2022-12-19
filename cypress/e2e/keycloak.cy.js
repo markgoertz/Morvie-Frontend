@@ -4,9 +4,9 @@ describe("Visit vercel app", () => {
   });
 });
 
-describe("Visit Docker keycloak app", () => {
+describe("Visit docker app", () => {
   it("passes", () => {
-    cy.visit("http://host.docker.internal:2222/realms/Morvie/protocol/openid-connect/auth?client_id=MyApp&redirect_uri=https%3A%2F%2Fmorvie-frontend-markgoertz.vercel.app%2F");
+    cy.visit("http://localhost:2222/realms/Morvie/protocol/openid-connect/auth?client_id=MyApp&redirect_uri=https%3A%2F%2Fmorvie-frontend-markgoertz.vercel.app%2F");
   });
 });
 
