@@ -1,13 +1,20 @@
 describe("Visit vercel app", () => {
   it("passes", () => {
-    cy.visit("https://morvie-frontend-markgoertz.vercel.app/");
+    cy.visit("https://morvie-frontend-markgoertz.vercel.app");
   });
 });
 
+describe("Visit vercel app", () => {
+  it("passes", () => {
+    cy.visit("http://localhost:2222/realms/Morvie/protocol/openid-connect/auth?client_id=MyApp&redirect_uri=https%3A%2F%2Fmorvie-frontend-markgoertz.vercel.app%2F");
+  });
+});
+
+
+
 describe("Keycloak-pages", () => {
   it("Access Keycloak registry page", () => {
-    cy.visit("https://morvie-frontend-markgoertz.vercel.app/");
-    cy.origin("http://localhost:2222", () => {
+    cy.visit("http://localhost:2222/realms/Morvie/protocol/openid-connect/auth?client_id=MyApp&redirect_uri=https%3A%2F%2Fmorvie-frontend-markgoertz.vercel.app%2F", () => {
       cy.get("a").contains("Register").click();
     });
   });
