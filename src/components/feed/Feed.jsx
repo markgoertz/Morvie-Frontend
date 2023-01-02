@@ -53,6 +53,7 @@ const Feed = (props) => {
   useEffect(() => {
     const getFeeds = async () => {
       const response = await tmdbApi.getFeeds(props.id);
+      console.log(response.data);
       setItems(response.data);
     };
     getFeeds();
