@@ -4,7 +4,7 @@ import App from './App';
 import Keycloak from 'keycloak-js';
 
 //Get the keycloak configuration
-let keycloak = Keycloak('./resources/keycloak.json');
+const keycloak = Keycloak('./resources/keycloak.json');
 
 //Initialization of the keycloak instance
 keycloak.init({ onLoad: 'login-required' }).success((authenticated) => {
@@ -27,7 +27,7 @@ keycloak.init({ onLoad: 'login-required' }).success((authenticated) => {
 
     //store authentication tokens in sessionStorage
     sessionStorage.setItem('authentication', keycloak.token);
-    sessionStorage.setItem('refreshToken', keycloak.refreshToken);
+    sessionStorage.setItem('refreshToken', keycloak.refreshToken);    
 
     //to regenerate token on expiry
     setTimeout(() => {
@@ -52,7 +52,4 @@ keycloak.init({ onLoad: 'login-required' }).success((authenticated) => {
     console.error("Authenticated Failed");
 });
 
-
-
-// ReactDOM.render(<App />, document.getElementById('root'));
-
+export default keycloak;

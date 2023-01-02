@@ -6,9 +6,7 @@ import "./movie-grid.scss";
 import MovieCard from "../movie-card/MovieCard";
 import Button, { OutlineButton } from "../button/Button";
 
-
 import tmdbApi, { category, movieType, tvType } from "../../api/tmdbApi";
-import { Link } from "react-router-dom";
 
 const MovieGrid = (props) => {
   const [items, setItems] = useState([]);

@@ -1,0 +1,24 @@
+@use "../../scss/" as *;
+
+.form{
+    margin-top: 1%;
+}
+
+.form-group {
+    padding: 0.1em;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    font-size: 15px;
+}
+
+.header-title {
+    width: 100%;
+    margin: auto;
+    align-items: center;
+}
+
+.form-control{
+    padding:10px;
+    width: 100%;
+    margin:10px;
+}

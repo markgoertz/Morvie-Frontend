@@ -1,5 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import keycloak from "../..";
+
 import Button from "../button/Button";
 
 //Imports from this project
@@ -20,6 +22,8 @@ const Header = () => {
   const { pathname } = useLocation();
   const headerRef = useRef(null);
   const active = headerNav.findIndex((e) => e.path === pathname);
+  const logout = keycloak.logout;
+  
 
   useEffect(() => {
     const shrinkHeader = () => {
@@ -50,8 +54,10 @@ const Header = () => {
           
         </div>
         <h3><Link align = "center" to = "/">Home</Link></h3>
+        <a href = "http://localhost:2222/realms/Morvie/account/#/applications"><h3 text-transform = "capitalize">{keycloak.tokenParsed.preferred_username} </h3></a>
+        
         <h3><Link align = "center" to = "/movie">Movie</Link></h3>
-        <ul className="header__nav">{<Button>Log out</Button>}</ul>
+        <Button onClick={logout}>Log out</Button>
       </div>
     </div>
   );

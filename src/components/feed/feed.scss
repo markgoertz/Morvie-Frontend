@@ -1,12 +1,19 @@
 .nocontentheader {
-    padding: 60;
+    padding: 2em;
     margin: 50;
-    font-family: 'Press Start 2P';
+    font-family: "Montserrat", sans-serif;
     box-sizing: border-box;
     color: #FFFFFF;
+
     text-align: center;
 }
 
 .card{
-    padding: 50px;
+    padding: 20px;
+    font-family: "Montserrat", sans-serif;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    text-align: center;
+    display: flex;
 }
+

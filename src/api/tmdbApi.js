@@ -37,19 +37,6 @@ const tmdbApi = {
           throw error;
         })
     },
-    getVideos(cate, id){
-        const url = baseurl + category[cate] + '/' + id + '/videos'+`?api_key=` + apikey;
-        return axios(url,
-            {
-                method: 'GET',
-                headers: {
-                    'content-type': 'application/json',
-                }
-            }) 
-        .catch(error => {
-          throw error;
-        })
-    },
     search: (cate, params) => {
         const url = 'search/' + category[cate];
         return axiosClient.get(url, params);
