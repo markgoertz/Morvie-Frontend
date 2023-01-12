@@ -6,7 +6,6 @@ import apiConfig from "../../api/apiConfig";
 
 import "./detail.scss";
 import CastList from "./CastList";
-import VideoList from "./VideoList";
 import Feed from "../../components/feed/Feed";
 
 const Detail = () => {
@@ -66,9 +65,6 @@ const Detail = () => {
             </div>
           </div>
           <div className="container">
-            <div className="section mb-3">
-              <VideoList id={item.id} />
-            </div>
             <div className="section mb-3">
               <div className="section__header mb-2">
                 <h2>Threads</h2>
