@@ -44,8 +44,8 @@ describe("Application pages", () => {
     cy.get("a").contains("Puss in Boots: The Last Wish").click();
     cy.wait(2000);
     cy.get("button").contains("Open form").click();
-    cy.get("topicName").type("Automated Testing with Cypress");
-    cy.get("content").type("This is fully automated POST test!");
+    cy.get("#topicName").type("Automated Testing with Cypress");
+    cy.get("#content").type("This is fully automated POST test!");
 
     cy.get("button").contains("Submit").click();
 
