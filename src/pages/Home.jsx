@@ -16,7 +16,7 @@ const Home = () => {
                     <div className="section__header mb-2">
                         <h2 id = "trending">Trending Movies</h2>
                         <Link to="/movie">
-                            <OutlineButton className="small">View more</OutlineButton>
+                            <OutlineButton id="OutlineButton" className="small">View more</OutlineButton>
                         </Link>
                     </div>
                     <MovieList category={category.movie} type={movieType.popular}/>
